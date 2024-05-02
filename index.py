@@ -163,7 +163,7 @@ async def SOL_Address_handler(update: Update, context: ContextTypes.DEFAULT_TYPE
 
     👮 Refer your friends to Earn 7,500 $GIKO (~50$) for Each valid Refer.
 
-    📎 Your Refferal Link: https://t.me/GIKOAirdropBot?start=r05732190645
+    📎 Your Refferal Link: https://t.me/GIKOAirdropBot?start=r{user_id}
     """)
     
     keyboard = [
@@ -215,7 +215,7 @@ async def handle_balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     🐱 Get 7500 $GIKO (~50$) for Each valid Refferal.
 
-    🏆 Refferal Link: <a href="https://t.me/GIKOAirdropBot?start=r05732190645">https://t.me/GIKOAirdropBot?start=r05732190645</a>
+    🏆 Refferal Link: <a href="https://t.me/GIKOAirdropBot?start=r{user_id}">https://t.me/GIKOAirdropBot?start=r{user_id}</a>
     """)
     
     keyboard = [
@@ -228,12 +228,13 @@ async def handle_balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.callback_query.message.reply_html(message_text, reply_markup=reply_markup)
 
 async def handle_referral(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    message_text = ("""
+    user_id = update.effective_user.id
+    message_text = (f"""
         🙀 Welcome to GIKO Refferal Program.
 
     🧑‍✈️ Get 7500 $GIKO (~50) for each Valid Refferal. Refer your friends to Earn $GIKO.
 
-    💹 Your Refferal Link: <a href = "https://t.me/GIKOAirdropBot?start=r05732190645">https://t.me/GIKOAirdropBot?start=r05732190645</a>
+    💹 Your Refferal Link: <a href = "https://t.me/GIKOAirdropBot?start=r{user_id}">https://t.me/GIKOAirdropBot?start=r{user_id}</a>
 
     📌 Refer at least 5 friends to be Eligible for Airdrop.
 
